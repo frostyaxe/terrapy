@@ -1,0 +1,5 @@
+typer
+python-terraform
+jinja2
+graphviz
+matplotlib

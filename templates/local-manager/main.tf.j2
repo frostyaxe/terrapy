@@ -1,0 +1,12 @@
+resource "null_resource" "local_execution" {
+    provisioner "local-exec" {
+        command = "echo Hello, {{ name }}"
+    }
+}
+
+resource "null_resource" "dep_local_execution" {
+    provisioner "local-exec" {
+        command = "echo Hello, {{ name }}"
+    }
+    depends_on = [null_resource.local_execution]
+}
