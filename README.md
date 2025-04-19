@@ -31,6 +31,7 @@ To render and validate a Terraform module, use the `templates` command. You can 
 
 ```bash
 python main.py templates <module-name> [--vars <path-to-vars-file>]
+```
 
 ### Apply a Terraform Module
 
@@ -38,3 +39,4 @@ To apply a Terraform module (e.g., `aws_s3_bucket`), use the `apply` command:
 
 ```bash
 python main.py apply <module-name>
+```
