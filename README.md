@@ -40,3 +40,21 @@ To apply a Terraform module (e.g., `aws_s3_bucket`), use the `apply` command:
 ```bash
 python main.py apply <module-name>
 ```
+
+## 📦 Custom Functions/Macros
+
+Each macro file should define one or more Jinja2 macros.  
+**Example:** `macros/greet.j2`
+
+```jinja2
+{# hello.j2 #}
+{% macro hello(name) %}
+  Hello, {{ name }}!
+{% endmacro %}
+```
+
+And then, you can use it as shown below in the jinja2 templates.
+
+```jinja2
+macros['hello'].hello("Alice")
+```
