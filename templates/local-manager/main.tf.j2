@@ -1,6 +1,6 @@
 resource "null_resource" "local_execution" {
     provisioner "local-exec" {
-        command = "echo Hello, {{ name }}"
+        command = "echo Hello, {{ macros["hello"].hello() }}"
     }
 }
 

@@ -14,6 +14,7 @@
 from jinja2 import FileSystemLoader, Environment
 import os
 import pathlib
+from loaders.macros import load_macros
 
 # Define the root directory where all Jinja2 templates are stored
 templates = "./templates"
@@ -52,4 +53,5 @@ def render_template(path: str, vars):
         str: Rendered template content as a string.
     """
     tpl = tpl_env.get_template(path)
-    return tpl.render(vars)
+    macros = load_macros()
+    return tpl.render(vars,macros=macros)
